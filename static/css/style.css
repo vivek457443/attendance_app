@@ -1,0 +1,117 @@
+/* ---------------- GLOBAL ---------------- */
+
+body {
+    background: #f4f6f9;
+    font-family: "Segoe UI", sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar {
+    background: #0d6efd;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+/* ---------------- CARDS ---------------- */
+
+.card {
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ---------------- TABLE ---------------- */
+
+.table th {
+    background: #0d6efd;
+    color: white;
+}
+
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.btn {
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    color: gray;
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+/* Dark Navbar */
+body.dark .navbar {
+    background: #000 !important;
+}
+
+/* Dark Cards */
+body.dark .card {
+    background: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* Dark Table */
+body.dark .table {
+    color: #e0e0e0;
+}
+
+body.dark .table th {
+    background: #333;
+}
+
+/* Dark Inputs */
+body.dark input,
+body.dark select,
+body.dark textarea {
+    background: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+/* Dark Secondary Button */
+body.dark .btn-secondary {
+    background: #444;
+    border: none;
+}
+
+/* Dark Alerts */
+body.dark .alert-info {
+    background: #1f2a38;
+    color: #bcdffb;
+}
+
+body.dark .alert-success {
+    background: #1e3d2f;
+    color: #a8f0c6;
+}
+
+body.dark .alert-danger,
+body.dark .alert-warning {
+    background: #3a1e1e;
+    color: #ffb3b3;
+}
