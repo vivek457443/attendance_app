@@ -12,6 +12,11 @@ pipeline {
                 checkout scm
             }
         }
+stage('Docker Build') {
+    steps {
+        bat 'docker build -t attendance-app .'
+    }
+}
 
         stage('Python Version') {
             steps {
