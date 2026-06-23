@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PYTHON = 'C:\\Users\\TiwariG\\AppData\\Local\\Programs\\Python\\Python310\\python.exe'
+    }
+
     stages {
 
         stage('Checkout') {
@@ -11,19 +15,20 @@ pipeline {
 
         stage('Python Version') {
             steps {
-                bat 'python --version'
+                bat '"%PYTHON%" --version'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                bat 'pip install -r requirements.txt'
+                bat '"%PYTHON%" -m pip install --upgrade pip'
+                bat '"%PYTHON%" -m pip install -r requirements.txt'
             }
         }
 
         stage('Syntax Check') {
             steps {
-                bat 'python -m py_compile app.py'
+                bat '"%PYTHON%" -m py_compile app.py'
             }
         }
 
@@ -41,6 +46,10 @@ pipeline {
 
         failure {
             echo 'Pipeline failed'
+        }
+
+        always {
+            echo 'Pipeline execution completed'
         }
     }
 }
