@@ -12,11 +12,6 @@ pipeline {
                 checkout scm
             }
         }
-stage('Docker Build') {
-    steps {
-        bat 'docker build -t attendance-app .'
-    }
-}
 
         stage('Python Version') {
             steps {
@@ -37,6 +32,19 @@ stage('Docker Build') {
             }
         }
 
+        stage('Docker Build') {
+            steps {
+                bat 'docker build -t attendance-app .'
+            }
+        }
+
+        stage('Deploy Container') {
+            steps {
+                bat 'docker rm -f attendance-container || exit 0'
+                bat 'docker run -d -p 5000:5000 --name attendance-container attendance-app'
+            }
+        }
+
         stage('Build') {
             steps {
                 bat 'echo Attendance App Build Successful'
@@ -45,6 +53,7 @@ stage('Docker Build') {
     }
 
     post {
+
         success {
             echo 'Pipeline executed successfully'
         }
