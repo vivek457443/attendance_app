@@ -519,15 +519,15 @@ def student_profile(id):
 
     conn.close()
 
-#     return render_template(
-#         "student_profile.html",
-#         student=student,
-#         attendance=attendance,
-#         present=present,
-#         absent=absent,
-#         leave=leave,
-#         percentage=percentage
-#     )
-# # ---------------- RUN ----------------
-# if __name__ == "__main__":
-#     app.run(host="0.0.0.0", port=5000, debug=True)
+    return render_template(
+        "student_profile.html",
+        student=student,
+        attendance=attendance,
+        present=present,
+        absent=absent,
+        leave=leave,
+        percentage=percentage
+    )
+# ---------------- RUN ----------------
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
